@@ -5,8 +5,13 @@ describe ( 'Device Emulation', async () => {
     let page
 
     before ( 'launch browser', async () => {
-        browser = await puppeteer.launch({ headless: false, slowMo: 50, args: [ "--start-maximized" ] })
-        page = await browser.newPage()
+        browser = await puppeteer.launch({ 
+            headless: false, 
+            slowMo: 50, 
+            args: [ "--start-maximized" ] 
+        })
+        const context = await browser.createIncognitoBrowserContext() //create a new incognito browser
+        page = await context.newPage() //necessário substituir browser pela variável context
         await page.setDefaultTimeout(10000)
         await page.setDefaultNavigationTimeout(20000)
     })
