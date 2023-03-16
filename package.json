@@ -1,0 +1,19 @@
+{
+  "name": "cursoqa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./test",
+    "test:device": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./test/device.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.4",
+    "puppeteer": "^19.7.5"
+  }
+}
